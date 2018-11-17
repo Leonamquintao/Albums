@@ -1,4 +1,6 @@
-# This Repository is destined to start my studies in react-native
+# Albums
+
+This Repository is destined to start my studies in react-native
 
 ### Bugfix
 
