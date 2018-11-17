@@ -11,28 +11,29 @@ export default class AlbumList extends Component<{}> {
   state = { albums: [] };
 
   componentWillMount() {
-    let url = 'https://rallycoding.herokuapp.com/api/music_albums'
-    axios.get(url).then((response) => {
-      console.log(response.data)
-      this.setState({ albums: response.data });
+    axios.get('https://rallycoding.herokuapp.com/api/music_albums').then((res) => {
+      this.setState({ albums: res.data });
     }).catch((error) => {
       console.log(error);
     });
   }
 
   renderAlbums() {
-    return this.state.albums.map(album =>
-      //the best scenario is to use the 'id' of the item interaction
-      //but in this particular case, the API dont have this prop.
-      <AlbumDetail key={ album.title } album={ album } />
+    return this.state.albums.map(item =>
+      /* the best scenario is to use the 'id' of the item interaction
+      but in this particular case, the API dont have this prop. */
+
+      /* album here is a PROP "album={ item }" */
+      <AlbumDetail key={ item.title } album={ item } />
     );
   }
 
   render() {
+    console.log(this.state);
     return (
       <ScrollView>
         { this.renderAlbums() }
-      </ScrollView>
+     </ScrollView>
     );
   }
 }

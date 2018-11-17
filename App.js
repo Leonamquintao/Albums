@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native';
 
 // components
 import Header from './src/components/Header';
-// import AlbumList from './src/components/AlbumList';
+import AlbumList from './src/components/AlbumList';
 
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,6 +25,7 @@ export default class App extends Component<Props> {
     return (
       <View style={{ flex: 1 }}>
         <Header headerText={'Albums'} />
+        <AlbumList />
       </View>
     );
   }
