@@ -5,12 +5,13 @@ export default class Card extends Component <{}> {
   render() {
     return (
       <View style={ styles.container }>
+        { this.props.children }
       </View>
     );
   }
 }
 
-const styles = new StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderRadius: 2,
