@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -7,7 +7,7 @@ import Button from './Button';
 export default class AlbumDetail extends Component<{}> {
   render() {
     /* Destruction aproach instead of use 'this.props.album' */
-    const { title, artist, thumbnail_image, image } = this.props.album;
+    const { title, artist, thumbnail_image, image, url } = this.props.album;
     return (
       <Card>
         <CardSection>
@@ -26,7 +26,7 @@ export default class AlbumDetail extends Component<{}> {
         </CardSection>
 
         <CardSection>
-          <Button buttonText={'Click Here!'} propMethod={ () => console.log(title) } />
+          <Button buttonText={'Click Here!'} propMethod={ () => Linking.openURL(url) } />
         </CardSection>
       </Card>
     );
