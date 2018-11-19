@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 export default class AlbumDetail extends Component<{}> {
   render() {
@@ -25,10 +26,10 @@ export default class AlbumDetail extends Component<{}> {
         </CardSection>
 
         <CardSection>
+          <Button buttonText={'Click Here!'} propMethod={ () => console.log(title) } />
         </CardSection>
       </Card>
     );
-
   }
 }
 
